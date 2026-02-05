@@ -49,7 +49,7 @@
     }
 </div>
 
-<!-- New: Moves History Section -->
+<!-- Moves History -->
 <aside>
     <h3>Moves History:</h3>
     <ol>
@@ -64,7 +64,7 @@
     private string[] pieces = new string[42];
     private string winnerMessage = string.Empty;
     private string errorMessage = string.Empty;
-    private List<string> moves = new List<string>(); // List to store moves
+    private List<string> moves = new List<string>();
 
     [Parameter]
     public Color BoardColor { get; set; } = ColorTranslator.FromHtml("yellow");
@@ -91,15 +91,15 @@
             var landingRow = State.PlayPiece(col); // Play piece and get landing row
             pieces[turn] = $"player{player} col{col} drop{landingRow}";
 
-            // Add this move to the moves list
+            // Add move to moves history
             moves.Add($"Player {player} played column {col + 1}");
         }
         catch (ArgumentException ex)
         {
-            errorMessage = ex.Message; // Column full or invalid move
+            errorMessage = ex.Message;
         }
 
-        // Check for winner after every move
+        // Check for winner
         winnerMessage = State.CheckForWin() switch
         {
             GameState.WinState.Player1_Wins => "Player 1 Wins!",
@@ -117,7 +117,7 @@
         State.ResetBoard();
         winnerMessage = string.Empty;
         errorMessage = string.Empty;
-        pieces = new string[42]; // Clear all pieces
+        pieces = new string[42]; // Clear board
         moves.Clear(); // Clear moves history
     }
 }

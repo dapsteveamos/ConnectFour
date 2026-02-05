@@ -1,6 +1,30 @@
 ﻿@page "/"
-
+@using System.Drawing
 <PageTitle>Index</PageTitle>
 
-<Board @rendermode="InteractiveServer"     BoardColor="System.Drawing.Color.Black" Player1Color="System.Drawing.Color.Green"
-       Player2Color="System.Drawing.Color.Purple" />
+<h2>Connect Four Game</h2>
+
+<!-- Color Pickers -->
+<h3>Customize Colors</h3>
+
+<label>Board Color: </label>
+<input type="color" @bind="boardColorHex" />
+
+<label>Player 1 Color: </label>
+<input type="color" @bind="player1ColorHex" />
+
+<label>Player 2 Color: </label>
+<input type="color" @bind="player2ColorHex" />
+
+<br /><br />
+
+<!-- Board Component -->
+<Board @rendermode="InteractiveServer"       BoardColor="@ColorTranslator.FromHtml(boardColorHex)"
+       Player1Color="@ColorTranslator.FromHtml(player1ColorHex)"
+       Player2Color="@ColorTranslator.FromHtml(player2ColorHex)" />
+
+@code {
+    private string boardColorHex = "#000000"; // default black
+    private string player1ColorHex = "#008000"; // default green
+    private string player2ColorHex = "#800080"; // default purple
+}
