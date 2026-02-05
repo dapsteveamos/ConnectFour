@@ -49,10 +49,22 @@
     }
 </div>
 
+<!-- New: Moves History Section -->
+<aside>
+    <h3>Moves History:</h3>
+    <ol>
+        @foreach (var move in moves)
+        {
+            <li>@move</li>
+        }
+    </ol>
+</aside>
+
 @code {
     private string[] pieces = new string[42];
     private string winnerMessage = string.Empty;
     private string errorMessage = string.Empty;
+    private List<string> moves = new List<string>(); // List to store moves
 
     [Parameter]
     public Color BoardColor { get; set; } = ColorTranslator.FromHtml("yellow");
@@ -78,6 +90,9 @@
             var turn = State.CurrentTurn; // Index in pieces array
             var landingRow = State.PlayPiece(col); // Play piece and get landing row
             pieces[turn] = $"player{player} col{col} drop{landingRow}";
+
+            // Add this move to the moves list
+            moves.Add($"Player {player} played column {col + 1}");
         }
         catch (ArgumentException ex)
         {
@@ -103,5 +118,6 @@
         winnerMessage = string.Empty;
         errorMessage = string.Empty;
         pieces = new string[42]; // Clear all pieces
+        moves.Clear(); // Clear moves history
     }
 }
