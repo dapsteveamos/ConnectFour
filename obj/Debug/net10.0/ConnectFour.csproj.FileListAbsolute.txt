@@ -84,3 +84,4 @@ C:\Users\DELL\Documents\COMPUTER PROGRAMMING\C# BYU DEGREE\CSE325\wk4\ConnectFou
 C:\Users\DELL\Documents\COMPUTER PROGRAMMING\C# BYU DEGREE\CSE325\wk4\ConnectFour\ConnectFour\obj\Debug\net10.0\scopedcss\Components\Board.razor.rz.scp.css
 C:\Users\DELL\Documents\COMPUTER PROGRAMMING\C# BYU DEGREE\CSE325\wk4\ConnectFour\ConnectFour\obj\Debug\net10.0\compressed\8t7ubqbmk6-{0}-aoqp7d6qr3-aoqp7d6qr3.gz
 C:\Users\DELL\Documents\COMPUTER PROGRAMMING\C# BYU DEGREE\CSE325\wk4\ConnectFour\ConnectFour\obj\Debug\net10.0\compressed\qps0edvuu1-{0}-aoqp7d6qr3-aoqp7d6qr3.gz
+C:\Users\DELL\Documents\COMPUTER PROGRAMMING\C# BYU DEGREE\CSE325\wk4\ConnectFour\ConnectFour\obj\Debug\net10.0\ConnectFour.sourcelink.json
